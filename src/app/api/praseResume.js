@@ -4,8 +4,10 @@ const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY });
 
 export default async function praseResume(
   extractedText,
+  setExtractedText,
   setStructuredData,
-  setLoader
+  setLoader,
+  setFileName
 ) {
   // Define the exact JSON schema for the resume output
   const resumeSchema = {
@@ -124,6 +126,8 @@ export default async function praseResume(
     if (typeof setStructuredData === "function") {
       setStructuredData(structuredData);
        setLoader(false);
+       setExtractedText('');
+       setFileName('');
     }
 
     // Return the structured data to the caller
@@ -136,5 +140,7 @@ export default async function praseResume(
       error?.message || "Failed to parse resume using Gemini API"
     );
     setLoader(false);
+    setExtractedText('');
+    setFileName('');
   }
 }

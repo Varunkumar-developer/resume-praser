@@ -52,7 +52,7 @@ const PDFJSViewer = () => {
   const handleParseResume = async () => {
     if (!extractedText) return;
     setLoader(true);
-    const result = praseResume(extractedText, setStructuredData, setLoader);
+    const result = praseResume(extractedText, setExtractedText, setStructuredData, setLoader, setFileName);
 
     // try {
     // const res = await fetch('/api/parseResume', {
@@ -81,10 +81,10 @@ const PDFJSViewer = () => {
         </h1>
       </header>
       <section
-        className="min-h-[calc(100vh-60px)] bg-gradient-to-r from-[#f3f5eb] to-[#e6e8df]
+        className="min-h-[calc(100dvh-60px)] bg-gradient-to-r from-[#f3f5eb] to-[#e6e8df]
         p-[32px_16px] flex flex-col items-center justify-start rounded-[20px_20px_0_0] relative overflow-hidden"
       >
-        <h2 className="text-center text-[3.4rem] text-[#2b2d2f] leading-[4.6rem] tracking-[1.1px] mb-[43px] font-lexend font-bold z-10 relative">
+        <h2 className="text-center text-[3.4rem] text-[#2b2d2f] leading-[4.6rem] tracking-[1.1px] mb-[43px] font-lexend font-bold z-10 relative  max-sm:text-[2rem] max-sm:leading-[normal] max-sm:mb-[24px]">
           Upload Resume
         </h2>
 
@@ -93,7 +93,7 @@ const PDFJSViewer = () => {
             htmlFor="dropzone-file"
             className="flex flex-col items-center justify-center w-full min-h-64 border-[2px] border-dashed border-[#bbc2ce] rounded-[20px] cursor-pointer bg-white relative p-[32px_16px] shadow-[0_12px_28px_-2px_#0000001a]"
           >
-            <div className="flex flex-col items-center justify-center text-body pt-5 pb-6">
+            <div className="flex flex-col items-center justify-center text-body ">
               <div className="relative w-[80px] h-[80px] grid place-items-center">
                 <div className="w-[48px] h-[48px] bg-[#2b2d2f] rounded-full  z-[1] relative grid place-items-center">
                   <svg
@@ -125,7 +125,7 @@ const PDFJSViewer = () => {
                 </svg>
               </div>
               <p className="mb-2 text-sm">
-                <span className="text-[1.8rem] leading-[2.7rem] mb-[8px] font-bold">
+                <span className="text-[1.8rem] max-sm:text-[1.5rem] leading-[2.7rem] mb-[8px] font-bold">
                   Drag and drop a resume here
                 </span>
               </p>
@@ -175,7 +175,7 @@ const PDFJSViewer = () => {
 
         <div className="w-full overflow-auto mt-3 z-10 relative">
           {structuredData.length !== 0 && (
-            <table className="table-auto border-collapse border border-gray-300 w-full bg-white min-w-[768px]">
+            <table className="table-auto border-collapse border border-gray-300 w-full bg-white min-w-[992px]">
               <thead>
                 <tr>
                   <th className="text-xl leading-[2.7rem] border border-[#bbc2ce] p-[8px] font-bold text-start">
