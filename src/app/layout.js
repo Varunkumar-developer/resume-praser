@@ -9,7 +9,7 @@ const inter = Inter({
 export const metadata = {
   title: "Resume Parser",
   description: "AI-powered resume parsing using Gemini API",
-  metadataBase: new URL("https://your-domain.com"),
+  metadataBase: new URL("https://resume-praser.vercel.app/"),
   authors: [{ name: "Varun Kumar" }],
   icons: {
     icon: "/favicon.png",
@@ -18,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: "Resume Parser",
     description: "AI-powered resume parsing using Gemini API",
-    url: "https://your-domain.com",
+    url: "https://resume-praser.vercel.app/",
     siteName: "Resume Parser",
     images: [
       {
