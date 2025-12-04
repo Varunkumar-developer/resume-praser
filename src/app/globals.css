@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@custom-variant light (&:where([data-theme=light], [data-theme=light] *));
+
+:root {
+  /* Light theme is default */
+  --background: #ffffff;
+  --foreground: #171717;
+   
+}
+
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+   --font-inter: 'Inter', sans-serif;
+}
+
+html{
+      line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
