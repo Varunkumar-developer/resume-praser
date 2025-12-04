@@ -2,7 +2,6 @@
 import React, { useState, useRef } from "react";
 import praseResume from "../api/praseResume";
 import { DotLoader } from "react-spinners";
-import InteractiveDots from "./DotPattern";
 
 const PDFJSViewer = () => {
   const [extractedText, setExtractedText] = useState("");
@@ -193,6 +192,9 @@ const PDFJSViewer = () => {
                   </th>
                   <th className="text-xl leading-[2.7rem] border border-[#bbc2ce] p-[8px] font-bold text-start">
                     Education
+                  </th>
+                  <th className="text-xl leading-[2.7rem] border border-[#bbc2ce] p-[8px] font-bold text-start">
+                    Product Details
                   </th>
                 </tr>
               </thead>
